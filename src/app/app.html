@@ -1,0 +1,92 @@
+<!-- Header -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<header class="bg-gradient-to-r from-green-700 via-green-600 to-green-800 shadow-xl sticky top-0 z-50">
+  <div class="container mx-auto flex flex-wrap p-3 md:p-4 items-center justify-between">
+    
+    <!-- Logo -->
+    <a class="flex items-center gap-2 text-white font-extrabold text-2xl tracking-wide">
+      <i class='bx bx-cricket-ball text-4xl text-yellow-400'></i>
+      Rooftop Cricket
+    </a>
+
+    <!-- Navbar (Desktop) -->
+    <nav class="hidden md:flex items-center gap-6 text-white font-medium">
+      <a class="flex items-center gap-1 hover:text-yellow-400 transition" routerLink="/matches">
+        <i class='bx bx-trophy'></i> Matches
+      </a>
+      <a class="flex items-center gap-1 hover:text-yellow-400 transition" routerLink="/home">
+        <i class='bx bx-plus-circle'></i> Add Match
+      </a>
+      <a class="flex items-center gap-1 hover:text-yellow-400 transition" routerLink="/result">
+        <i class='bx bx-pie-chart-alt-2'></i> Results
+      </a>
+      <a routerLink="/help" 
+         class="flex items-center gap-1 bg-yellow-400 text-green-900 px-3 py-1 rounded-lg hover:bg-yellow-300 transition">
+        <i class='bx bx-help-circle'></i> Help
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+   <!-- Mobile Menu Button -->
+<button class="md:hidden text-white text-3xl" (click)="toggleMenu()">
+  @if(isMenuOpen) {
+    <i class='bx bx-x'></i>   <!-- Cross icon -->
+  } @else {
+    <i class='bx bx-menu animate-pulse'></i> <!-- Hamburger icon -->
+  }
+</button>
+  </div>
+
+  <!-- Mobile Menu (using @if, Angular 17+) -->
+  @if(isMenuOpen) {
+    <div class="md:hidden bg-green-700/95 text-white flex flex-col gap-4 p-5 animate-slideDown" (click)="hidecall()">
+      <a routerLink="/matches" class="flex items-center gap-2 hover:text-yellow-400">
+        <i class='bx bx-trophy'></i> Matches
+      </a>
+      <a routerLink="/home" class="flex items-center gap-2 hover:text-yellow-400">
+        <i class='bx bx-plus-circle'></i> Add Match
+      </a>
+      <a routerLink="/result" class="flex items-center gap-2 hover:text-yellow-400">
+        <i class='bx bx-pie-chart-alt-2'></i> Results
+      </a>
+      <a routerLink="/help" 
+         class="flex items-center gap-2 bg-yellow-400 text-green-900 px-3 py-1 rounded-lg hover:bg-yellow-300 transition">
+        <i class='bx bx-help-circle'></i> Help
+      </a>
+    </div>
+  }
+</header>
+<router-outlet></router-outlet>
+<footer class=" bg-green-700 backdrop-blur-lg border-t border-white/10 text-center py-6 text-sm text-white">
+  <div class="container px-5 mx-auto flex flex-col sm:flex-row items-center justify-between">
+    
+    <!-- Logo -->
+    <a class="flex title-font font-medium items-center text-white mb-4 sm:mb-0">
+          <i class='bx bx-cricket-ball text-4xl text-yellow-400'></i>
+      <span class="ml-3 text-xl font-bold">Rooftop Cricket</span>
+    </a>
+
+    <!-- Text -->
+    <p class="text-sm text-green-100">
+      © 2025 Rooftop Cricket — All Rights Reserved <br>
+      Built with ❤️ and ☕ in Pakistan by <span class="font-semibold">Malik Muhammad Umair</span>
+    </p>
+
+    <!-- Social Icons -->
+    <span class="inline-flex mt-4 sm:mt-0 justify-center sm:justify-start gap-4">
+      <a class="text-green-100 hover:text-yellow-300 transition cursor-pointer">
+        <i class='bx bxl-facebook-circle text-2xl'></i>
+      </a>
+      <a class="text-green-100 hover:text-yellow-300 transition cursor-pointer">
+        <i class='bx bxl-twitter text-2xl'></i>
+      </a>
+      <a class="text-green-100 hover:text-yellow-300 transition cursor-pointer">
+        <i class='bx bxl-instagram text-2xl'></i>
+      </a>
+      <a class="text-green-100 hover:text-yellow-300 transition cursor-pointer">
+        <i class='bx bxl-linkedin text-2xl'></i>
+      </a>
+    </span>
+  </div>
+</footer>

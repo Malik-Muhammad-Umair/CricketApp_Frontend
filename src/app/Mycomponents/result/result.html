@@ -1,0 +1,40 @@
+<!-- index.html (head tag ke andar daalna hai) -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="result-container grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+
+  @if(chartSeries.length > 0){
+    <!-- Donut Chart -->
+    <div class="card bg-white shadow-lg rounded-2xl p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <i class='bx bx-pie-chart-alt-2 text-blue-500 text-2xl'></i> Match Results
+      </h2>
+      <apx-chart 
+        [series]="chartSeries"
+        [chart]="chartDetails"
+        [labels]="chartLabels"
+        [responsive]="responsive">
+      </apx-chart>
+    </div>
+
+    <!-- Players Win Count -->
+    <div class="card bg-white shadow-lg rounded-2xl p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <i class='bx bx-group text-green-500 text-2xl'></i> Player Wins
+      </h2>
+      <ul class="space-y-3">
+        @for(Nameofplayers of chartLabels; track Nameofplayers; let i = $index){
+          <li class="flex justify-between items-center border-b pb-2">
+            <span class="flex items-center gap-2">
+              <i class='bx bx-user text-gray-600'></i> {{ Nameofplayers }}
+            </span>
+            <span class="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full">
+              {{ chartSeries[i] }} wins
+            </span>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+
+</div>

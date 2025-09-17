@@ -1,0 +1,76 @@
+<!-- Hero -->
+<section class="text-center py-10 bg-green-800/80 backdrop-blur-lg border-b border-white/10">
+  <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-white">Record Your Match Results</h2>
+  <p class="text-slate-200 text-sm md:text-base">Fast, simple & modern way to keep your cricket stats 🎯</p>
+</section>
+
+<!-- Main Content -->
+<main class="flex-1  mx-auto w-full px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 bg-green-800/80 backdrop-blur-lg">
+  
+  <!-- Form Section -->
+  <div class=" backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-white/20">
+    <h3 class="text-xl font-semibold mb-6 text-white">🏆 Enter Match Details</h3>
+    <form class="space-y-6" #criket="ngForm" (ngSubmit)="submit(criket.value)">
+      <!-- Winner -->
+      <div>
+        <label class="block text-sm mb-1 text-slate-200">Winner (Team/Player) <b class="text-red-500">*</b></label>
+        <input type="text" placeholder="e.g. Karachi Kings" ngModel name="winner" required
+          class="w-full rounded-lg px-4 py-2 bg-slate-800/50 border border-white/20 focus:ring-2 focus:ring-yellow-400 text-white"/>
+      </div>
+      <!-- Overs + Runs -->
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm mb-1 text-slate-200">Overs <b class="text-red-500">*</b></label>
+          <input type="number" min="1" placeholder="e.g. 20" ngModel name="overs" required
+            class="w-full rounded-lg px-4 py-2 bg-slate-800/50 border border-white/20 focus:ring-2 focus:ring-yellow-400 text-white"/>
+        </div>
+        <div>
+          <label class="block text-sm mb-1 text-slate-200">Runs <b class="text-red-500">*</b></label>
+          <input type="number" placeholder="e.g. 150" ngModel name="runs" required
+            class="w-full rounded-lg px-4 py-2 bg-slate-800/50 border border-white/20 focus:ring-2 focus:ring-yellow-400 text-white"/>
+        </div>
+      </div>
+      <!-- Date -->
+      <div>
+        <label class="block text-sm mb-1 text-slate-200">Date <b class="text-red-500">*</b></label>
+        <input type="date" ngModel name="date" required
+          class="w-full rounded-lg px-4 py-2 bg-slate-800/50 border border-white/20 focus:ring-2 focus:ring-yellow-400 text-white"/>
+      </div>
+      <!-- Buttons -->
+      <h1 class="text-white italic">Note : Fill each field to enable save button!</h1><br>
+      <div class="flex gap-4">
+      <button type="submit" [disabled]="!criket.valid"
+  class="disabled:cursor-not-allowed disabled:opacity-50 flex-1 px-6 py-2 rounded-lg bg-gradient-to-r from-green-500 to-yellow-500 text-black font-semibold shadow-md hover:opacity-90">
+  Save
+</button>
+        <button type="reset" (click)="reset(criket)"
+          class="flex-1 px-6 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-slate-200">
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Preview Section -->
+ 
+    
+   
+  <div class=" backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-white/20">
+    <h3 class="text-xl font-semibold mb-6 text-white">📊 Last Match Summary</h3>
+    <div class="space-y-4 text-slate-200">
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Winner</span> <span class="font-semibold">{{ListofMatches[ListofMatches.length-1].winner}}</span>
+      </div>
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Overs</span> <span class="font-semibold">{{ListofMatches[ListofMatches.length-1].overs}}</span>
+      </div>
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Runs</span> <span class="font-semibold">{{ListofMatches[ListofMatches.length-1].runs}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Date</span> <span class="font-semibold">{{ListofMatches[ListofMatches.length-1].date}}</span>
+        
+      </div>
+    </div>
+  </div>
+</main>

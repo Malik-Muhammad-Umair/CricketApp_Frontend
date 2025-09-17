@@ -1,0 +1,81 @@
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  font-family: "Poppins", sans-serif;
+  color: #f0f0f0;
+}
+
+.result-container {
+  
+  
+  gap: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  padding: 20px;
+  
+  /* border: 5px solid red; */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00d4ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.05);
+  /* padding: 12px 15px; */
+  margin-bottom: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  transition: background 0.2s ease;
+}
+
+li:hover {
+  background: rgba(0, 212, 255, 0.15);
+}
+
+.badge {
+  background: #00d4ff;
+  color: #111;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.winner {
+  grid-column: span 2;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd700, #ffae00);
+  color: #111;
+  font-weight: bold;
+}
+
+.winner p {
+  font-size: 26px;
+  margin-top: 10px;
+}

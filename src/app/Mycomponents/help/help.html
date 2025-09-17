@@ -1,0 +1,33 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<section class="min-h-screen bg-gradient-to-br from-green-900 via-emerald-800 to-slate-900 text-slate-100 py-12 px-6 font-[Poppins]">
+  <div class="max-w-4xl mx-auto">
+    
+    <!-- Title -->
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 flex items-center justify-center gap-2">
+      <i class='bx bx-help-circle text-yellow-400 text-4xl animate-bounce'></i>
+      Help & Support
+    </h2>
+    <p class="text-center text-slate-300 mb-12">
+      Find answers to the most common questions about <span class="text-yellow-400">Cricket App 🏏</span>
+    </p>
+
+    <!-- FAQs -->
+    <div class="space-y-6">
+      @for (item of faqs; track item.id) {
+        <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition duration-300">
+          <h3 class="flex items-center gap-2 text-lg font-semibold text-yellow-400 mb-2">
+            <i class='bx bx-question-mark text-xl'></i>
+            {{ item.question }}
+          </h3>
+          <p class="text-slate-200 text-sm leading-relaxed pl-6">
+            <i class='bx bx-right-arrow-circle text-green-400'></i> {{ item.answer }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- Contact -->
+   
+  </div>
+</section>
