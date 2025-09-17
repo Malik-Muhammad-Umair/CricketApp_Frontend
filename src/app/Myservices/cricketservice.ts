@@ -10,23 +10,23 @@ export class Cricketservice {
 
    }
    postrecords(val:CricketForm ):Observable<CricketForm >{
-    const url="cricketbackend-production-8049.up.railway.app/api/cricketer";
+    const url="https://cricketbackend-production-8049.up.railway.app/api/cricketer";
    return this.http.post<CricketForm >(url,val);
    }
    deletewithid(id:any):Observable<CricketForm >{
-    const url="cricketbackend-production-8049.up.railway.app/api/cricketer";
+    const url="https://cricketbackend-production-8049.up.railway.app/api/cricketer";
    return this.http.delete<CricketForm >(`${url}/${id}`);
    }
    getallMatches():Observable<CricketForm[]>{
-        const url="cricketbackend-production-8049.up.railway.app/api/cricketers";
+        const url="https://cricketbackend-production-8049.up.railway.app/api/cricketers";
 return this.http.get<CricketForm[]>(url)
    }
    getmatchesbyid(id:any):Observable<CricketForm>{
-        const url="cricketbackend-production-8049.up.railway.app/api/cricketer";
+        const url="https://cricketbackend-production-8049.up.railway.app/api/cricketer";
 return this.http.get<CricketForm>(`${url}/${id}`)
    }
    updatematch(fullmatch:CricketForm):Observable<CricketForm>{
-    const url="cricketbackend-production-8049.up.railway.app/api/cricketer";
+    const url="https://cricketbackend-production-8049.up.railway.app/api/cricketer";
 return this.http.put<CricketForm>(`${url}/${fullmatch.id}`,fullmatch)
    }
    
