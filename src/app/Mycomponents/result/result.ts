@@ -26,10 +26,10 @@ export class Result {
       breakpoint: 480,
       options: {
         chart: {
-          width: 360
+          width: 300
         },
         legend: {
-          position: "right"
+          position: "bottom"
         }
       }
     }
