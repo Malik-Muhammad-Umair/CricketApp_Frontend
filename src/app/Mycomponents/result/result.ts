@@ -18,7 +18,7 @@ export class Result {
 
   chartDetails: ApexChart = {
     height: 350, 
-    width: 400
+    
   };
 
   responsive: ApexResponsive[] = [
@@ -26,7 +26,7 @@ export class Result {
       breakpoint: 480,
       options: {
         chart: {
-          width: 300
+          width: 350
         },
         legend: {
           position: "bottom"
