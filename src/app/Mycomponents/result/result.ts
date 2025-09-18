@@ -17,9 +17,9 @@ export class Result {
   overallWinner: string = "";   // 👈 final winner store karne ke liye
 
   chartDetails: ApexChart = {
-      type: 'donut',
-    height: 350, 
-    
+    type: "donut",
+    height: 350,
+    width: 400
   };
 
   responsive: ApexResponsive[] = [
@@ -27,7 +27,7 @@ export class Result {
       breakpoint: 480,
       options: {
         chart: {
-          width: 350
+          width: 300
         },
         legend: {
           position: "bottom"
