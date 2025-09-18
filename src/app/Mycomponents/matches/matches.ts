@@ -26,6 +26,7 @@ ngOnInit(){
 delete(id:number){
   this.match.deletewithid(id).subscribe((data:CricketForm)=>{
     if(data){
+      alert("One match deleted.")
       this.ngOnInit();
     }
     
