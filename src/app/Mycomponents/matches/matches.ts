@@ -25,6 +25,7 @@ ngOnInit(){
 }
 delete(id:number){
   this.match.deletewithid(id).subscribe((data:CricketForm)=>{
+     this.ngOnInit();
     if(data){
       
       this.ngOnInit();
@@ -34,6 +35,5 @@ delete(id:number){
 
 }
 search:string="";
-  refresh(){
-     this.ngOnInit();}
+  
 }
